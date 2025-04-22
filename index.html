@@ -10,15 +10,30 @@
             margin: 0;
             box-sizing: border-box;
         }
-        body{
-            background-image: url('/myPortfolio/public/static/bgimg2.jpeg');
-            background-position:center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-size: cover;
-            z-index: 1;
+      
+        body {
+    background-image: url('/myPortfolio/public/static/bgimg2.jpeg');
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: bgMove 60s linear infinite;
+    position: relative;
+    z-index: 1;
+}
 
-        }
+@keyframes bgMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
         .container{
             width: 100vw;
             height:100vh;
@@ -38,13 +53,22 @@
             
 
         }
-        .namingBox{
-            font: 800;
-            font-size: 400%;
-            font-family:'Times New Roman', Times, serif , Georgia, ;
-            gap: 30%;
-            color: rgb(148, 148, 238);
-        }
+        .namingBox {
+    font-weight: 800;
+    font-size: 400%;
+    font-family: 'Times New Roman', Times, serif, Georgia;
+    color: red;
+    animation: colorCycle 5s linear infinite;
+}
+
+@keyframes colorCycle {
+    0% { color: red; }
+    25% { color: orange; }
+    50% { color: lime; }
+    75% { color: cyan; }
+    100% { color: violet; }
+}
+
         .profession{
             font-weight: 600;
             font-size: 250%;
@@ -67,6 +91,7 @@
         .captionlist{
             font-size: xx-large;
             font-weight: 700;
+            color: aquamarine;
         }
         #box-2{
             /* display: flex;
@@ -76,7 +101,7 @@
             width: 100%;
         }
         h1{
-            width: 70%;
+            width: 80%;
             text-align:center
         }
         .projectBox{
@@ -91,12 +116,16 @@
         img{
             height: 80%;
             width: 80%;
+            border: 2px inset grey;
+            outline: 2px inset grey;
             border-radius: 50%;
+            box-shadow: inset;
         }
         img:hover{
             height: 100%;
             width: 100%;
             border: 2px solid blue;
+            
         }
         img:active{
             border-color: green;
@@ -104,6 +133,74 @@
         a{
             color: azure;
         }
+        .projectBox a {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    height: 40%;
+}
+
+.projectBox a::before,
+.projectBox a::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    z-index: -1;
+    border: 3px dashed transparent;
+    animation: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.projectBox a::before {
+    border-top-color: aqua;
+    border-right-color: magenta;
+    border-bottom-color: yellow;
+    border-left-color: lime;
+}
+
+.projectBox a::after {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transform: rotate(0deg);
+}
+
+.projectBox a:hover::before {
+    animation: spin 2s linear infinite;
+}
+
+.projectBox a:hover::after {
+    animation: spinReverse 2s linear infinite;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinReverse {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -113,7 +210,7 @@
             <br>
             <span class="profession">MERN STACK DEVELOPER</span><br>
             <div class="technicalStack">
-                <ul style="list-style-type: circle;">
+                <ul>
                     <caption class="captionlist">TECHNICAL STACK</caption>
                     <li>javaScript</li>
                     <li>HTML5</li>

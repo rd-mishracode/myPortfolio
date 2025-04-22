@@ -10,6 +10,15 @@
             margin: 0;
             box-sizing: border-box;
         }
+        body{
+            background-image: url('/myPortfolio/public/static/bgimg2.jpeg');
+            background-position:center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 1;
+
+        }
         .container{
             width: 100vw;
             height:100vh;
@@ -19,7 +28,8 @@
         .box{
             height: 100%;
             width: 50%;
-            border: 2px solid red;
+            border: 2px solid hidden;
+            color: antiquewhite;
         }
         #box-1{
             display: flex;
@@ -33,7 +43,7 @@
             font-size: 400%;
             font-family:'Times New Roman', Times, serif , Georgia, ;
             gap: 30%;
-            color: blue;
+            color: rgb(148, 148, 238);
         }
         .profession{
             font-weight: 600;
@@ -48,12 +58,15 @@
             font-size: 150%;
             font-weight: 300;
         }
-        table,caption{border: 1px solid hidden;}
         tr,td{
             margin: 4px;
             padding: 2px;
             border: 1px solid hidden;
 
+        }
+        .captionlist{
+            font-size: xx-large;
+            font-weight: 700;
         }
         #box-2{
             /* display: flex;
@@ -63,15 +76,30 @@
             width: 100%;
         }
         h1{
-            text-align: center;
+            width: 70%;
+            text-align:center
         }
         .projectBox{
             height: 80%;
             width: 80%;
-            border: 2px solid;
+            border: 2px solid hidden;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+            
+        }
+        img{
+            height: 80%;
+            width: 80%;
+            border-radius: 50%;
+        }
+        img:hover{
+            height: 100%;
+            width: 100%;
+            border: 2px solid blue;
+        }
+        img:active{
+            border-color: green;
         }
     </style>
 </head>
@@ -81,20 +109,17 @@
             <span class="namingBox">Rishab Dev Mishra</span>
             <br>
             <span class="profession">MERN STACK DEVELOPER</span><br>
-            <div class="technicalStack"><table><caption>TECHNICAL STACK</caption>
-            <tbody>
-                <tr>
-                    <td>javaScript</td>
-                    <td>HTML5</td>
-                    <td>CSS</td>
-                </tr>
-                <tr>
-                    <td>ReactJs</td>
-                    <td>NextJs</td>
-                    <td>NodeJs</td>
-                </tr>
-              
-            </tbody></table></div>
+            <div class="technicalStack">
+                <ul style="list-style-type: circle;">
+                    <caption class="captionlist">TECHNICAL STACK</caption>
+                    <li>javaScript</li>
+                    <li>HTML5</li>
+                    <li>CSS</li>
+                    <li>ReactJs</li>
+                    <li>NodeJs</li>
+                    <li>NextJS</li>
+                </ul>
+            </div>
             <div class="contact">
                 <span>Email:- rishabdev2287688@gmail.com</span><br>
                 <span>Phone: 8707745562</span>
@@ -104,10 +129,10 @@
         <div class="box" id="box-2">
             <h1>PROJECTS</h1>
             <div class="projectBox">
-                <img src="" alt="project1">
-                <img src="" alt="project2">
-                <img src="" alt="project3">
-                <img src="" alt="project4">
+               <a title="CUSTOMER MANAGEMENT SYSTEM" href="/myPortfolio/cmsDetail.html"> <img  src="/myPortfolio/public/static/images.png" alt="project1"></a>
+              <a title="ECOMERCE WEBSITE" href="/myPortfolio/ecomerceDetail.html">  <img  src="./public/static/ecomerce.jpeg" alt="project2"></a>
+              <a title="TODO APP" href="/myPortfolio/todoDetail.html">  <img  src="./public/static/todo.png" alt="project3"></a>
+               <a title="WEATHER REPORT APP" href="/myPortfolio/wrDetail.html"> <img  src="/myPortfolio/public/static/wrimg.jpeg" alt="project4"></a>
             </div>
         </div>
     </div>

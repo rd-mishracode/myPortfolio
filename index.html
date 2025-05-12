@@ -12,7 +12,7 @@
         }
       
         body {
-    background-image: url('/myPortfolio/public/static/bgimg2.jpeg');
+    background-image: url('/public/static/bgimg2.jpeg');
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -37,7 +37,7 @@
         .container{
             width: 100vw;
             height:100vh;
-            border: 2px solid;
+            border: 2px solid hidden;
             display: flex;
         }
         .box{
@@ -47,6 +47,7 @@
             color: antiquewhite;
         }
         #box-1{
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -54,7 +55,7 @@
 
         }
         .namingBox {
-    font-weight: 800;
+    font-weight: bolder;
     font-size: 400%;
     font-family: 'Times New Roman', Times, serif, Georgia;
     background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
@@ -80,19 +81,20 @@
         }
         .contact{
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 150%;
+            font-size: 125%;
             font-weight: 300;
+            color: rgb(163, 132, 221);
         }
         tr,td{
-            margin: 4px;
-            padding: 2px;
+            margin: 4%;
+            padding: 2%;
             border: 1px solid hidden;
 
         }
         .captionlist{
-            font-size: xx-large;
+            font-size: 2rem;
             font-weight: 700;
-            color: aquamarine;
+            color: rgb(7, 73, 51);
         }
         #box-2{
             /* display: flex;
@@ -132,7 +134,10 @@
             border-color: green;
         }
         a{
-            color: azure;
+            color: rgb(98, 72, 212);
+        }
+        a:hover{
+            color: darkblue;
         }
         .projectBox a {
     position: relative;
@@ -200,7 +205,27 @@ img {
         transform: rotate(-360deg);
     }
 }
+@media (max-width: 400px) {
+    *{
+        border:hidden
+    }
+    .namingBox {
+        font-size: 2rem; 
+        text-align: center;
+    }
+    .profession{
+    font-size: 1.5rem; 
 
+}
+ .contact{
+    font-size: 1.5rem; 
+    
+}
+
+/* #box-1{
+    height: 100vh;
+} */
+}
 
     </style>
 </head>
@@ -211,8 +236,8 @@ img {
             <br>
             <span class="profession">MERN STACK DEVELOPER</span><br>
             <div class="technicalStack">
-                <ul>
-                    <caption class="captionlist">TECHNICAL STACK</caption>
+                <ul style="color: blue; list-style-type: disc; list-style-position: outside;">
+                    <caption class="captionlist">TECHNICAL STACK</caption><hr style="width: 50%; color:gray;">
                     <li>javaScript</li>
                     <li>HTML5</li>
                     <li>CSS</li>
@@ -229,14 +254,15 @@ img {
         
         </div>
         <div class="box" id="box-2">
-            <h1>PROJECTS</h1>
+           <h1>PROJECTS</h1>
             <div class="projectBox">
-               <a title="CUSTOMER MANAGEMENT SYSTEM" href="/myPortfolio/cmsDetail.html"> <img  src="/myPortfolio/public/static/images.png" alt="project1"></a>
-              <a title="ECOMERCE WEBSITE" href="/myPortfolio/ecomerceDetail.html">  <img  src="./public/static/ecomerce.jpeg" alt="project2"></a>
-              <a title="TODO APP" href="/myPortfolio/todoDetail.html">  <img  src="./public/static/todo.png" alt="project3"></a>
-               <a title="WEATHER REPORT APP" href="/myPortfolio/wrDetail.html"> <img  src="/myPortfolio/public/static/wrimg.jpeg" alt="project4"></a>
+               <a title="CUSTOMER MANAGEMENT SYSTEM" href="/cmsDetail.html"> <img  src="/public/static/images.png" alt="project1"></a>
+              <a title="ECOMERCE WEBSITE" href="/ecomerceDetail.html">  <img  src="/public/static/ecomerce.jpeg" alt="project2"></a>
+              <a title="TODO APP" href="/todoDetail.html">  <img  src="/public/static/todo.png" alt="project3"></a>
+               <a title="WEATHER REPORT APP" href="/wrDetail.html"> <img  src="/public/static/wrimg.jpeg" alt="project4"></a>
             </div>
         </div>
+        <span><a href="./public/static/rishab dev cv.pdf" target="_blank" download>Download Resume ⇓</a></span>
     </div>
 </body>
 </html>
